@@ -10,7 +10,13 @@ using namespace cv;
 using namespace zbar;
 
 int main(int argc, char **argv) {
-    VideoCapture cap(1);
+    int cam_idx = 0;
+
+    if (argc == 2) {
+        cam_idx = atoi(argv[1]);
+    }
+
+    VideoCapture cap(cam_idx);
     if (!cap.isOpened()) {
         cerr << "Could not open camera." << endl;
         exit(EXIT_FAILURE);
