@@ -1,0 +1,9 @@
+language: c++
+sudo: false
+matrix:
+  include:
+    - os: linux
+      compiler: clang
+
+install:
+  - sudo apt-get install libcv-dev libcvaux-dev libhighgui-dev libopencv-dev
